@@ -1,23 +1,24 @@
 <div class="container m-3 p-3">
   <div class="row mb-2">
     <div class="col-12">
-      <label for="loanValue">Wartość kredytu w PLN</label>
-      <input type="text" class="form-control" placeholder="np. 500 000" #loanAmount/>
+      <label for="loanAmount">Wartość kredytu w PLN</label>
+      <input type="text" class="form-control" placeholder="np. 500 000" [(ngModel)] = "loan.amount" #amount/>
     </div>
   </div>
   <div class="row mb-2">
     <div class="col-12">
-      <label for="loanTerm">Okres kredytowania (w latach)</label><br />
+      <label for="loanPeriod">Okres kredytowania (w latach)</label><br />
       <input
         class="form-control-range"
         type="range"
-        name="loanTerm"
+        name="loanPeriod"
         min="0"
         max="50"
         step="1"
-        [(ngModel)]="loanTerm"
+        [(ngModel)]="loan.period"
+        #period
       />
-      <span> {{ loanTerm }} lat(a)</span>
+      <span> {{ loan.period }} lat(a) = {{ (+loan.period * 12) }} miesięcy</span>
     </div>
   </div>
   <div class="row mb-2">
@@ -30,9 +31,10 @@
         step="0.1"
         class="form-control"
         placeholder="np. 5.0%"
+        [(ngModel)]="loan.percentage"
         #percentage
       />
     </div>
   </div>
-  <button type="submit" class="btn btn-primary mt-3" (click)="addNewLoan(+loanAmount.value, loanTerm, +percentage.value)">Oblicz ratę</button>
+  <button type="submit" class="btn btn-primary mt-3" (click)="loan.calculateLoan()">Oblicz ratę</button>
 </div>

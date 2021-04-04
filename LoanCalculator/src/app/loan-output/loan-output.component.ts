@@ -8,10 +8,9 @@ import { Loan } from '../models/loan';
 })
 export class LoanOutputComponent implements OnInit {
 
-  @Input() public loanData: Loan;
+  @Input() public loan: Loan;
 
-  constructor() { 
-    this.loanData = new Loan();
+  constructor() {
   }
 
   ngOnInit(): void {

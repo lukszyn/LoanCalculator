@@ -7,19 +7,11 @@ import { Loan } from './models/loan';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'LoanCalculator';
-  loan: Loan;
+  public loan: Loan;
 
   constructor() {
-    this.loan = new Loan();
-  }
-
-  addLoan(newLoan: Loan) {
-    this.loan = newLoan;
-    this.calculateLoan(this.loan);
-  }
-
-  calculateLoan(loan: Loan) {
-
+    this.loan = new Loan()
   }
 }

@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoanInputComponent } from './loan-input/loan-input.component';
 import { LoanOutputComponent } from './loan-output/loan-output.component';
+import { LoanScheduleComponent } from './loan-schedule/loan-schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoanInputComponent,
-    LoanOutputComponent
+    LoanOutputComponent,
+    LoanScheduleComponent
   ],
   imports: [
     BrowserModule,

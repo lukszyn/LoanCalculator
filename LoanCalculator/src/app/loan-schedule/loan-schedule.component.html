@@ -1,0 +1,22 @@
+<div class="container m-3 p-3">
+  <div class="row mb-2">
+    <table class="table table-striped text-center">
+      <thead class="thead-dark text-center">
+        <th>Numer raty</th>
+        <th>Rata [PLN]</th>
+        <th>Oprocentowanie [%]</th>
+        <th>Kwota spłaconego kapitału [PLN]</th>
+        <th>Kwota do spłacenia [PLN]</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let installment of loan.installments">
+          <td>{{ installment.counter }}</td>
+          <td>{{ installment.amount.toFixed(2) }}</td>
+          <td>{{ installment.percentage.toFixed(2) }}</td>
+          <td>{{ installment.paidAmount.toFixed(2) }}</td>
+          <td>{{ installment.remainingAmount.toFixed(2) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

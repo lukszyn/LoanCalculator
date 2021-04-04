@@ -6,7 +6,7 @@
       <input
         class="form-control"
         type="text"
-        [value]="loanData.percentage"
+        [value]="loan.totalPayment.toFixed(2)"
         readonly
       />
     </div>
@@ -17,7 +17,7 @@
       <input
         class="form-control"
         type="text"
-        [value]="loanData.percentage"
+        [value]="loan.percentageCost.toFixed(2)"
         readonly
       />
     </div>
@@ -28,7 +28,7 @@
       <input
         class="form-control"
         type="text"
-        [value]="loanData.percentage"
+        [value]="loan.installmentsAmount.toFixed(2)"
         readonly
       />
     </div>
@@ -39,9 +39,10 @@
       <input
         class="form-control"
         type="text"
-        [value]="loanData.percentage"
+        [value]="loan.yearlyCost.toFixed(2)"
         readonly
       />
     </div>
   </div>
+  <button type="submit" class="btn btn-primary mt-3" *ngIf="loan.isCalculated" (click)="loan.createInstallments()">Pokaż harmonogram spłat</button>
 </div>

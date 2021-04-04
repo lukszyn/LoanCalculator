@@ -2,12 +2,17 @@
   <h1 class="p-2 text-center">Kalulator rat kredytu hipotecznego</h1>
   <div class="row">
     <div class="col-6">
-      <app-loan-input (newLoanEvent)='addLoan($event)'></app-loan-input>
+      <app-loan-input [loan]="loan"></app-loan-input>
     </div>
   </div>
   <div class="row">
     <div class="col-6">
-      <app-loan-output [loanData]="loan"></app-loan-output>
+      <app-loan-output [loan]="loan"></app-loan-output>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <app-loan-schedule *ngIf="loan.isInstallments" [loan]="loan"></app-loan-schedule>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Loan } from '../models/loan';
 
 @Component({
@@ -8,22 +8,11 @@ import { Loan } from '../models/loan';
 })
 export class LoanInputComponent implements OnInit {
 
-  loanTerm: number = 0;
-
-  public loan: Loan = new Loan();
-
-  @Output() newLoanEvent: EventEmitter<Loan> = new EventEmitter<Loan>();
+  @Input() public loan: Loan;
+  @Output() public loanChange = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  addNewLoan(amount:number, term:number, percentage:number) {
-    this.loan.amount = amount; 
-    this.loan.loanPeriod = term; 
-    this.loan.percentage = percentage; 
-    this.newLoanEvent.emit(this.loan);
-  }
-
 }
